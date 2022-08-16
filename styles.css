@@ -1,0 +1,65 @@
+body {
+    background-color: burlywood;
+    min-height: 100vh;
+    margin: 0;
+    font-size: 2rem;
+    /* mobile first -- one big column */
+    display: grid;
+    grid-template-rows: 80px 100px 1fr 80px;
+    grid-template-columns: 1fr;
+    grid-template-areas:    "header"
+                            "aside"
+                            "main"
+                            "footer";
+}
+
+header {
+    grid-area: header;
+    background-color: brown;
+}
+
+aside {
+    grid-area: aside;
+    background-color: violet;
+}
+
+main {
+    grid-area: main;
+    background-color: aquamarine;
+}
+
+footer {
+    grid-area: footer;
+    background-color: cornflowerblue;
+}
+
+/* media query to detect 'media features' and selectively apply styles based on the device's features */
+/* @media media-type (media-feature) { } */
+
+@media (min-width: 800px) {
+    /* when the minimum witdh exceeds 800 pixels... */
+    body {
+        /* just change the properties that are relevant of the layout */
+        font-size: 1rem;
+        grid-template-rows: 100px 1fr 200px;
+        grid-template-columns: 150px 1fr;
+        grid-template-areas:    "header header"
+                                "aside main"
+                                "footer footer";
+    }
+}
+
+/* @media (media-feature) */
+@media (max-width: 900px) {
+    /* all of the css code written here will override the defualt when the screen is less than 900px */
+    /* body {
+        background-color: hotpink;
+    } */
+}
+
+/* does the screen media support hover? */
+@media (hover: hover) {
+    /* body {
+        background-color: chartreuse;
+    } */
+}
